@@ -1,0 +1,29 @@
+base:
+  project: gems_prediction
+  random_state: 10
+  target_col: price
+
+data_source: 
+  s3_source: data_given\cubic_zirconia.csv
+
+load_data:
+  raw_data_csv: data\raw\cubic_zirconia.csv
+
+split_data:
+  train_path: data\processed\train.csv
+  test_path: data\processed\test.csv
+  test_size: 0.3
+
+estimators:
+  RandomForestRegressor:
+    n_estimators:
+      criterion: 'squared_error'
+      max_depth: None
+      min_samples_split: 2
+      min_samples_leaf: 1
+      min_weight_fraction_leaf: 0.0
+      max_features: 1.0
+
+model_dir: saved_models
+
+
