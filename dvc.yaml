@@ -8,14 +8,26 @@ stages:
 
     outs:
     - data\raw\cubic_zirconia.csv
+  
+  preprocess_data:
+    cmd: python "src\preprocess.py" --config=parms.yaml
+
+    deps:
+      - src\preprocess.py 
+      - data\raw\cubic_zirconia.csv
+    
+    outs:
+    - data\processed\encode_data.csv
+
 
   split_data:
     cmd: python "src\split_data.py" --config=parms.yaml 
 
     deps:
     - src\split_data.py
-    - data\raw\cubic_zirconia.csv
+    - data\processed\encoded_data.csv
   
     outs:
     - data\processed\train.csv
     - data\processed\test.csv
+    

@@ -9,6 +9,9 @@ data_source:
 load_data:
   raw_data_csv: data\raw\cubic_zirconia.csv
 
+preprocess:
+  encoded_path: data\processed\encoded_data.csv
+
 split_data:
   train_path: data\processed\train.csv
   test_path: data\processed\test.csv
