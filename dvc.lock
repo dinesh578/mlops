@@ -16,3 +16,19 @@ stages:
     - path: data\raw\cubic_zirconia.csv
       md5: 1f7cd55830c00336901afb3138bc3698
       size: 1460673
+  split_data:
+    cmd: python "src\split_data.py" --config=parms.yaml
+    deps:
+    - path: data\raw\cubic_zirconia.csv
+      md5: 1f7cd55830c00336901afb3138bc3698
+      size: 1460673
+    - path: src\split_data.py
+      md5: f7b7bb8c0aedd65f01b4a7a23c82c028
+      size: 1038
+    outs:
+    - path: data\processed\test.csv
+      md5: 94f037c49167f4247b277de876151889
+      size: 392719
+    - path: data\processed\train.csv
+      md5: 1d507e2feb56fec94b022d7928f919a1
+      size: 917296
