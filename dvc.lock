@@ -1,0 +1,18 @@
+schema: '2.0'
+stages:
+  load_data:
+    cmd: python "src\load_data.py" --config=parms.yaml
+    deps:
+    - path: data_given\cubic_zirconia.csv
+      md5: d191efcda87c60ec08cccd1b3f0af55e
+      size: 1399151
+    - path: src\get_data.py
+      md5: 54a303ca3844e08509a3cf53933a82db
+      size: 631
+    - path: src\load_data.py
+      md5: c673dd999d1c900538eff2d35d07cb0c
+      size: 589
+    outs:
+    - path: data\raw\cubic_zirconia.csv
+      md5: 1f7cd55830c00336901afb3138bc3698
+      size: 1460673

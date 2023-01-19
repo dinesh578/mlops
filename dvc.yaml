@@ -1,0 +1,10 @@
+stages:
+  load_data:
+    cmd: python "src\load_data.py" --config=parms.yaml 
+    deps:
+    - src\get_data.py
+    - src\load_data.py
+    - data_given\cubic_zirconia.csv
+
+    outs:
+    - data\raw\cubic_zirconia.csv
