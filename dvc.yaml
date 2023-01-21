@@ -17,7 +17,7 @@ stages:
       - data\raw\cubic_zirconia.csv
     
     outs:
-    - data\processed\encode_data.csv
+    - data\processed\encoded_data.csv
 
 
   split_data:

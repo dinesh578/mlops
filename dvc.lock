@@ -32,3 +32,16 @@ stages:
     - path: data\processed\train.csv
       md5: 79f41545de4b35939b33979bc9e445e5
       size: 921942
+  preprocess_data:
+    cmd: python "src\preprocess.py" --config=parms.yaml
+    deps:
+    - path: data\raw\cubic_zirconia.csv
+      md5: 1f7cd55830c00336901afb3138bc3698
+      size: 1460673
+    - path: src\preprocess.py
+      md5: 95b5a8a103f1c9497e47abba2b16cd41
+      size: 1961
+    outs:
+    - path: data\processed\encoded_data.csv
+      md5: c8ad58a9831ab23bd729912692a5eaf7
+      size: 1317117
