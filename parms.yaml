@@ -18,15 +18,18 @@ split_data:
   test_size: 0.3
 
 estimators:
-  RandomForestRegressor:
-    n_estimators:
-      criterion: 'squared_error'
-      max_depth: None
-      min_samples_split: 2
-      min_samples_leaf: 1
-      min_weight_fraction_leaf: 0.0
-      max_features: 1.0
+  n_estimators: 100
+  criterion: 'squared_error'
+  max_depth: 2
+  min_samples_split: 2
+  min_samples_leaf: 1
+  min_weight_fraction_leaf: 0.0
+  max_features: 1.0
 
 model_dir: saved_models
+
+reports:
+  parms: reports\parms.json
+  metrics: reports\metric_scores.json
 
 

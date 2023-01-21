@@ -30,4 +30,25 @@ stages:
     outs:
     - data\processed\train.csv
     - data\processed\test.csv
+
+  train_and_evaluate:
+    cmd: python "src\train_and_evaluate.py" --config=parms.yaml
+    deps:
+    - data\processed\train.csv
+    - data\processed\test.csv
+    - src\train_and_evaluate.py
+
+    params:
+    - estimators
+
+    metrics:
+    - reports\metric_scores.json:
+        cache: false
+    - reports\parms.json:
+        cache: false
+
+    outs:
+    - saved_models\model.joblib
+
+
     
