@@ -1,6 +1,6 @@
 stages:
   load_data:
-    cmd: python "src\load_data.py" --config=parms.yaml 
+    cmd: python "src\load_data.py" --config=params.yaml 
     deps:
     - src\get_data.py
     - src\load_data.py
@@ -10,7 +10,7 @@ stages:
     - data\raw\cubic_zirconia.csv
   
   preprocess_data:
-    cmd: python "src\preprocess.py" --config=parms.yaml
+    cmd: python "src\preprocess.py" --config=params.yaml
 
     deps:
       - src\preprocess.py 
@@ -24,7 +24,7 @@ stages:
     cmd: python "src\split_data.py" --config=params.yaml 
 
     deps:
-    - src\split_data.py
+    - src\preprocess.py
     - data\processed\encoded_data.csv
   
     outs:

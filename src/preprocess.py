@@ -2,11 +2,11 @@ import os
 import argparse
 import pandas as pd
 from  sklearn.model_selection import train_test_split
-from get_data import read_parms
+from get_data import read_params
 #import category_encoders as ce
 
 def encoded_data(config_path):
-    config = read_parms(config_path)
+    config = read_params(config_path)
     encoded_data = config['load_data']['raw_data_csv']
     encode_data = config['preprocess']['encoded_path']
     df1 =pd.read_csv(encoded_data,sep=",")
@@ -44,7 +44,7 @@ def encoded_data(config_path):
 
 if __name__ == "__main__":
     args=argparse.ArgumentParser()
-    args.add_argument("--config",default="parms.yaml")
+    args.add_argument("--config",default="params.yaml")
     parsed_args = args.parse_args()
     encoded_data(config_path = parsed_args.config)
     
