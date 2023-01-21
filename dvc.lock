@@ -17,7 +17,7 @@ stages:
       md5: 1f7cd55830c00336901afb3138bc3698
       size: 1460673
   split_data:
-    cmd: python "src\split_data.py" --config=parms.yaml
+    cmd: python "src\split_data.py" --config=params.yaml
     deps:
     - path: data\processed\encoded_data.csv
       md5: c8ad58a9831ab23bd729912692a5eaf7
@@ -45,3 +45,35 @@ stages:
     - path: data\processed\encoded_data.csv
       md5: c8ad58a9831ab23bd729912692a5eaf7
       size: 1317117
+  train_and_evaluate:
+    cmd: python "src\train_and_evaluate.py" --config=params.yaml
+    deps:
+    - path: data\processed\test.csv
+      md5: fd1457c90d8aeec2f28bf66ed8a96bb8
+      size: 395245
+    - path: data\processed\train.csv
+      md5: 79f41545de4b35939b33979bc9e445e5
+      size: 921942
+    - path: src\train_and_evaluate.py
+      md5: bd9059ecf6858793387d599af7c8173c
+      size: 3073
+    params:
+      params.yaml:
+        estimators:
+          n_estimators: 100
+          criterion: squared_error
+          max_depth: 2
+          min_samples_split: 2
+          min_samples_leaf: 1
+          min_weight_fraction_leaf: 0.0
+          max_features: 1.0
+    outs:
+    - path: reports\metric_scores.json
+      md5: 5da7cd8caab4251e98a6192660e3a190
+      size: 99
+    - path: reports\parms.json
+      md5: 304e906a85fcbebff9efadc882a8d689
+      size: 206
+    - path: saved_models\model.joblib
+      md5: f0b454b393006715abf6ef2535ac1ef2
+      size: 76881
