@@ -60,7 +60,7 @@ stages:
     params:
       params.yaml:
         estimators:
-          n_estimators: 100
+          n_estimators: 110
           criterion: squared_error
           max_depth: 2
           min_samples_split: 2
@@ -69,11 +69,11 @@ stages:
           max_features: 1.0
     outs:
     - path: reports\metric_scores.json
-      md5: 7337736cb25b7c1e4fc23f627a801c37
-      size: 99
+      md5: 371d8a891eaa731dfcc810a8eea14dc5
+      size: 98
     - path: reports\params.json
-      md5: 304e906a85fcbebff9efadc882a8d689
+      md5: d5dd6bbe12f6e3174734cf16ea870111
       size: 206
     - path: saved_models\model.joblib
-      md5: 4acf34dcb02fec307b48b17162ec353b
-      size: 76881
+      md5: ed814139bdd6c748c7f0b25ab8958119
+      size: 84401

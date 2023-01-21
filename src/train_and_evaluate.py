@@ -66,15 +66,9 @@ def train_and_evaluate(config_path):
         json.dump(metrics,f,indent=4)
 
 
-    with open(params_file,"w") as f:
-        params ={"n_estimators": n_estimators,
-            "criterion" : criterion,
-            'max_depth': max_depth,
-            'min_samples_split': min_samples_split,
-            'min_samples_leaf': min_samples_leaf,
-            'min_weight_fraction_leaf': min_weight_fraction_leaf,
-            'max_features': max_features}
-        json.dump(params,f,indent=4)
+    with open(params_file,"w") as k:
+        params ={"n_estimators": n_estimators,"criterion" : criterion,'max_depth': max_depth,'min_samples_split': min_samples_split,'min_samples_leaf': min_samples_leaf,'min_weight_fraction_leaf': min_weight_fraction_leaf,'max_features': max_features}
+        json.dump(params,k,indent=4)
 
 
         os.makedirs(model_dir, exist_ok=True)
