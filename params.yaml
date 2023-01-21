@@ -18,7 +18,7 @@ split_data:
   test_size: 0.3
 
 estimators:
-  n_estimators: 100
+  n_estimators: 110
   criterion: 'squared_error'
   max_depth: 2
   min_samples_split: 2
