@@ -55,8 +55,8 @@ stages:
       md5: 79f41545de4b35939b33979bc9e445e5
       size: 921942
     - path: src\train_and_evaluate.py
-      md5: a3ab01bc1deb15d10979c4d7d20f484c
-      size: 3081
+      md5: 9f365f74623b1647104217ec4893c582
+      size: 2997
     params:
       params.yaml:
         estimators:
@@ -69,11 +69,11 @@ stages:
           max_features: 1.0
     outs:
     - path: reports\metric_scores.json
-      md5: 371d8a891eaa731dfcc810a8eea14dc5
-      size: 98
+      md5: 7713ee97c7e6b1270706df7158000b9e
+      size: 99
     - path: reports\params.json
       md5: d5dd6bbe12f6e3174734cf16ea870111
       size: 206
     - path: saved_models\model.joblib
-      md5: ed814139bdd6c748c7f0b25ab8958119
+      md5: 664ae18854afbe759dd85fd3a6c43f66
       size: 84401
