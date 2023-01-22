@@ -44,7 +44,6 @@ stages:
     metrics:
     - reports\metric_scores.json:
         cache: false
-    hyper_params:
     - reports\params.json:
         cache: false
 
